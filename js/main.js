@@ -1,13 +1,13 @@
 
 let converter = new Converter()
-converter.getAllCurrencies()
-converter.showCachedCurrencies()
+converter.getAllCurrencies()         //function to iterate through currencies
+converter.showCachedCurrencies()      //funcion to cache currencies
 
-
+//this function converts one currency to another
 function convert(){
-    let currentCurrency = document.getElementById("from").value;
-    let destinationCurrency = document.getElementById("to").value;
-    let value = document.getElementById("amount").value;
+    let currentCurrency = document.getElementById("from").value;   //storing the from currency
+    let destinationCurrency = document.getElementById("to").value;   //getting the to currency
+    let value = document.getElementById("amount").value;           //getting the amout space
 
     let query = currentCurrency+"_"+destinationCurrency
 
@@ -16,14 +16,14 @@ function convert(){
         const appStatus = response.appStatus;
 
         if(rate !== undefined){
-            document.getElementById("result").value = rate * value
+            document.getElementById("result").innerHTML = rate * value
              if(appStatus ==='online') converter.addCurrencyRateToCache(rate, currentCurrency, destinationCurrency)
         }
         else 
             console.log("unable to convert")
     }).catch( error => {
         console.log('No rate was found in the cache: ');
-        document.getElementById("result").value = "Can not convert. You seem to be offline"
+        document.getElementById("result").innerHTML = "Can not convert. You seem to be offline"
     });
 
     // converter.getCurrencyRateFromCache(currentCurrency, destinationCurrency).then(response => {
@@ -33,7 +33,7 @@ function convert(){
     //             return response.json();
     //         }).then(response => {
     //             console.log(response)
-    //             // document.getElementById("result").value = value * response[query].val
+    //             // document.getElementById("result").innerHTML = value * response[query].val
     //         })
     // })
 
@@ -41,6 +41,6 @@ function convert(){
     // .then(response => {
     //     return response.json();
     // }).then(response => {
-    //     document.getElementById("result").value = value * response[query].val
+    //     document.getElementById("result").innerHTML = value * response[query].val
     // })
 }

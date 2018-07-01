@@ -1,4 +1,4 @@
-self.addEventListener( "install" , function (event) { 
+self.addEventListener( "install" , function (event) {          //caching static files while service worker installs
     event.waitUntil(
         caches.open("cacheName1").then(function(cache) {
             return cache.addAll(
@@ -15,6 +15,8 @@ self.addEventListener( "install" , function (event) {
     );
 });
 
+
+//check cache before network on fetch events
 self.addEventListener('fetch', function(event) {
     console.log('Fetch event for ', event.request.url);
     event.respondWith(
