@@ -3,12 +3,12 @@ self.addEventListener( "install" , function (event) {
         caches.open("cacheName1").then(function(cache) {
             return cache.addAll(
                 [
-                    './',
-                    './css/style.css',
-                    './js/converter.js',
-                    './js/idb.js',
-                    './js/main.js',
-                    './avatars/badge.jpg'
+                    '/',
+                    '/css/bootstrap.min.css',
+                    '/js/converter.js',
+                    '/js/idb.js',
+                    '/js/main.js',
+                    '/avatars/badge.jpg'
                 ]
             );
         })
