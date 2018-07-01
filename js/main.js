@@ -16,14 +16,14 @@ function convert(){
         const appStatus = response.appStatus;
 
         if(rate !== undefined){
-            document.getElementById("result").innerHTML = rate * value
+            document.getElementById("result").value = rate * value
              if(appStatus ==='online') converter.addCurrencyRateToCache(rate, currentCurrency, destinationCurrency)
         }
         else 
             console.log("unable to convert")
     }).catch( error => {
         console.log('No rate was found in the cache: ');
-        document.getElementById("result").innerHTML = "Can not convert. You seem to be offline"
+        document.getElementById("result").value = "Can not convert. You seem to be offline"
     });
 
     // converter.getCurrencyRateFromCache(currentCurrency, destinationCurrency).then(response => {
@@ -33,7 +33,7 @@ function convert(){
     //             return response.json();
     //         }).then(response => {
     //             console.log(response)
-    //             // document.getElementById("result").innerHTML = value * response[query].val
+    //             // document.getElementById("result").value = value * response[query].val
     //         })
     // })
 
@@ -41,6 +41,6 @@ function convert(){
     // .then(response => {
     //     return response.json();
     // }).then(response => {
-    //     document.getElementById("result").innerHTML = value * response[query].val
+    //     document.getElementById("result").value = value * response[query].val
     // })
 }
