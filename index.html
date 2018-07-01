@@ -13,7 +13,6 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="form-validation.css" rel="stylesheet">
   </head>
 
   <body >
@@ -55,7 +54,7 @@
 		<!--conversion area-->
         <div class="col-md-8 order-md-1">
           <h4 class="mb-3">Convert Here</h4>
-          <form class="needs-validation" novalidate>
+          <form  novalidate>
 			
 			
 			<!-- select statement for "from currency"-->
@@ -66,9 +65,6 @@
                   <option value="">Choose...</option>
                   <option></option>
                 </select>
-                <div class="invalid-feedback">
-                  Please select a valid currency
-                </div>
               </div>
 			  
 			  <!-- select statement for "to currency"-->
@@ -78,26 +74,21 @@
                   <option value="">Choose...</option>
                   <option></option>
                 </select>
-                <div class="invalid-feedback">
-                  Please provide a valid currency.
-                </div>
               </div>
 			  
 			  <!-- input statement for "amount to be converted"-->
               <div class="col-md-3 mb-3">
                 <label for="amount">Amount</label>
                 <input type="text" class="form-control" id="amount" placeholder="" required>
-                <div class="invalid-feedback">
-                  amount code required.
-                </div>
               </div>
 			  
             </div>
             
             <hr class="mb-4">
 			
+
 			<div class="input-group offset-md-4 col-md-8">
-              <input type="text" class="form-control" placeholder="result" disabled>
+              <input type="text" class="form-control" id="result" placeholder="result" disabled> <!--input to hold converted value-->
               <div class="input-group-append">
                 <button type="submit" class="btn btn-secondary">Convert</button>
               </div>
@@ -112,6 +103,9 @@
       </footer>
     </div>
 
+   <script type="text/javascript" src="js/idb.js"></script> 
+<script type="text/javascript" src="js/converter.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
 
   </body>
 </html>
